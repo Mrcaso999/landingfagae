@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Sản Phẩm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header giống TikTok Shop -->
+    <header class="app-header">
+        <div class="app-logo">TShop</div>
+        <div class="header-actions">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </header>
+
+    <!-- Add this after the header and before the product-container -->
+    <div class="breadcrumb-container">
+        <div class="breadcrumb">
+            <a href="/">TEEZY</a>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <a href="/thoi-trang">Thời Trang</a>
+            <span class="separator"><i class="fas fa-chevron-right"></i></span>
+            <span class="current">Tên Sản Phẩm</span>
+        </div>
+    </div>
+    
+    <div class="product-container">
+        <div class="product-images">
+            <div class="main-image">
+                <span class="sale-badge">-50%</span>
+                <img src="img/photo_1_2025-03-18_18-49-56.jpg" alt="Sản phẩm chính" id="mainImage">
+            </div>
+            <div class="thumbnails">
+                <img src="img/photo_1_2025-03-18_18-49-56.jpg" alt="Sản phẩm 1" class="thumbnail active" onclick="changeImage('img/photo_1_2025-03-18_18-49-56.jpg', 0)">
+                <img src="img/photo_2_2025-03-18_18-49-56.jpg" alt="Sản phẩm 2" class="thumbnail" onclick="changeImage('img/photo_2_2025-03-18_18-49-56.jpg', 1)">
+                <img src="img/photo_3_2025-03-18_18-49-56.jpg" alt="Sản phẩm 3" class="thumbnail" onclick="changeImage('img/photo_3_2025-03-18_18-49-56.jpg', 2)">
+                <img src="img/photo_4_2025-03-18_18-49-56.jpg" alt="Sản phẩm 4" class="thumbnail" onclick="changeImage('img/photo_4_2025-03-18_18-49-56.jpg', 3)">
+                <img src="img/photo_5_2025-03-18_18-49-56.jpg" alt="Sản phẩm 5" class="thumbnail" onclick="changeImage('img/photo_5_2025-03-18_18-49-56.jpg', 4)">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title">Tên Sản Phẩm</h1>
+            
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-count">128 đánh giá</span>
+            </div>
+            
+            <div class="product-price">
+                <span class="current-price">145,000₫</span>
+                <span class="original-price">270,000</span>
+                <span class="discount">-53%</span>
+            </div>
+            
+            <!-- New promotional badges -->
+            <div class="promo-badges">
+                <span class="badge badge-freeship">
+                    <i class="fas fa-truck"></i> Freeship
+                </span>
+                <span class="badge badge-bestseller">
+                    <i class="fas fa-fire"></i> Bán Chạy
+                </span>
+                <span class="badge badge-limited">
+                    <i class="fas fa-stopwatch"></i> Số Lượng Có Hạng
+                </span>
+                <span class="badge badge-flash">
+                    <i class="fas fa-bolt"></i> Flash Sale
+                </span>
+            </div>
+
+            <div class="product-description">
+                <p>Mô tả ngắn về sản phẩm và các tính năng nổi bật. Sản phẩm được thiết kế với chất liệu cao cấp, bền bỉ và thời trang.</p>
+            </div>
+            
+            <div class="product-options">
+                <div class="option-section">
+                    <div class="option-title">
+                        <i class="fas fa-tags"></i>
+                        <span>Chọn mẫu:</span>
+                    </div>
+                    <div class="model-options">
+                        <div class="model-option active" data-model="Mẫu A" data-image="img/photo_1_2025-03-18_18-49-56.jpg" data-index="0" onclick="selectModel(this)">Mẫu A</div>
+                        <div class="model-option" data-model="Mẫu B" data-image="img/photo_2_2025-03-18_18-49-56.jpg" data-index="1" onclick="selectModel(this)">Mẫu B</div>
+                        <div class="model-option" data-model="Mẫu C" data-image="img/photo_3_2025-03-18_18-49-56.jpg" data-index="2" onclick="selectModel(this)">Mẫu C</div>
+                        <div class="model-option" data-model="Mẫu D" data-image="img/photo_4_2025-03-18_18-49-56.jpg" data-index="3" onclick="selectModel(this)">Mẫu D</div>
+                        <div class="model-option" data-model="Mẫu E" data-image="img/photo_5_2025-03-18_18-49-56.jpg" data-index="4" onclick="selectModel(this)">Mẫu E</div>
+                    </div>
+                </div>
+                
+                <div class="option-section">
+                    <div class="option-title">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>Chọn kích thước:</span>
+                    </div>
+                    <div class="size-options">
+                        <div class="size-option" data-size="S" onclick="selectSize(this)">S</div>
+                        <div class="size-option active" data-size="M" onclick="selectSize(this)">M</div>
+                        <div class="size-option" data-size="L" onclick="selectSize(this)">L</div>
+                        <div class="size-option" data-size="XL" onclick="selectSize(this)">XL</div>
+                    </div>
+                </div>
+                
+                <div class="option-section">
+                    <div class="option-title">
+                        <i class="fas fa-cubes"></i>
+                        <span>Số lượng:</span>
+                    </div>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                        <input type="text" value="1" class="quantity-input" id="quantity" readonly>
+                        <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="buy-button" onclick="buyNow()"><i class="fas fa-bolt"></i> MUA NGAY</button>
+                <button class="cart-button" onclick="addToCart()"><i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">Thông báo</span>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-container">
+        <div class="reviews-header">
+            <h2>Đánh giá từ khách hàng</h2>
+            <div class="reviews-summary">
+                <div class="average-rating">
+                    <span class="rating-number">4.5</span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="total-reviews">128 đánh giá</span>
+                </div>
+                <div class="rating-bars">
+                    <div class="rating-bar-item">
+                        <span class="rating-level">5</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: 75%"></div>
+                        </div>
+                        <span class="rating-percent">75%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-level">4</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: 15%"></div>
+                        </div>
+                        <span class="rating-percent">15%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-level">3</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: 7%"></div>
+                        </div>
+                        <span class="rating-percent">7%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-level">2</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: 2%"></div>
+                        </div>
+                        <span class="rating-percent">2%</span>
+                    </div>
+                    <div class="rating-bar-item">
+                        <span class="rating-level">1</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill" style="width: 1%"></div>
+                        </div>
+                        <span class="rating-percent">1%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reviews-filter">
+            <button class="filter-btn active">Tất cả</button>
+            <button class="filter-btn">5 Sao</button>
+            <button class="filter-btn">4 Sao</button>
+            <button class="filter-btn">3 Sao</button>
+            <button class="filter-btn">2 Sao</button>
+            <button class="filter-btn">1 Sao</button>
+            <button class="filter-btn">Có Hình Ảnh</button>
+        </div>
+        
+        <div class="reviews-list">
+            <!-- Review 1 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="https://scontent.fvkg1-1.fna.fbcdn.net/v/t39.30808-1/480548328_122116910252684893_1167914979232380509_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_ohc=nZhQRVG2cPAQ7kNvgGmq1l5&_nc_oc=AdgH6sOkWykswUqCLb-GqqJoR3MeFnCpaFOgEeFY3SltRCuNJAW2g3LOglZXDK71hPg&_nc_zt=24&_nc_ht=scontent.fvkg1-1.fna&_nc_gid=yUmHBxtXjmgSnZWA_FE_eQ&oh=00_AYFhJesM4yUIndBnz78p_ORjGaBqzCsgYZchilHjpx8MhA&oe=67DF5D8F" alt="Nguyễn Thị Hương">
+                    </div>
+                    <div class="reviewer-details">
+                        <div class="reviewer-name">Nguyễn Thị Hương</div>
+                        <div class="review-date">16/03/2025</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-variant">Mẫu B - Size M</div>
+                    <p class="review-text">Sản phẩm rất đẹp, chất lượng vải tốt, đường may tỉ mỉ. Giao hàng nhanh, đóng gói cẩn thận. Tôi rất hài lòng và sẽ mua thêm các mẫu khác!</p>
+                    <div class="review-images">
+                        <img src="https://picsum.photos/id/237/100/100" alt="Review image">
+                        <img src="https://picsum.photos/id/238/100/100" alt="Review image">
+                    </div>
+                    <div class="review-likes">
+                        <button class="like-btn"><i class="far fa-thumbs-up"></i> Hữu ích (24)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="https://scontent.fvkg1-1.fna.fbcdn.net/v/t39.30808-6/462621366_122097622226562566_7555946969306048135_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=bIb0diYjkrMQ7kNvgEnJduP&_nc_oc=Adiz7GVREV4O5U-ruk8t5-c28t9lXkAjpM81lJtWrUQUUCxo2mWtnKogCRImEZQtf9o&_nc_zt=23&_nc_ht=scontent.fvkg1-1.fna&_nc_gid=VSKCYotQ2hdd_E61buvKgQ&oh=00_AYFSw78mWAKULu5_Uzt-n5l0_BnN_PftF47wpQ4RzNuwWg&oe=67DF5F11" alt="Trần Văn Minh">
+                    </div>
+                    <div class="reviewer-details">
+                        <div class="reviewer-name">Trần Văn Minh</div>
+                        <div class="review-date">15/03/2025</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="review-variant">Mẫu A - Size L</div>
+                    <p class="review-text">Sản phẩm đúng như mô tả, chất lượng tốt. Tôi thích thiết kế và màu sắc. Chỉ tiếc là size hơi rộng một chút, nhưng vẫn có thể chấp nhận được.</p>
+                    <div class="review-likes">
+                        <button class="like-btn"><i class="far fa-thumbs-up"></i> Hữu ích (12)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="https://scontent.fvkg1-1.fna.fbcdn.net/v/t1.6435-9/40586126_1440627456081385_2360909751283351552_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xCLlb2deLY0Q7kNvgG0A29R&_nc_oc=Adg6NMRf5TES2sg-wxNRxmYQ1m7PzSha79ZdqFk9-DydWOyn6NNdq8fFyhZWZxmFCO8&_nc_zt=23&_nc_ht=scontent.fvkg1-1.fna&_nc_gid=OtmnqhKSEXpxY_8rRNNwTw&oh=00_AYFq4KU7AjBWwUzdg-XZs2F7oSGSeQU37401lxHddZLxfA&oe=6800EA0B" alt="Lê Thị Hà">
+                    </div>
+                    <div class="reviewer-details">
+                        <div class="reviewer-name">Lê Thị Hà</div>
+                        <div class="review-date">10/03/2025</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="review-variant">Mẫu C - Size M</div>
+                    <p class="review-text">Mẫu C rất đẹp, màu sắc tươi sáng hơn trong hình. Chất vải mềm và thoáng, rất thích hợp cho mùa hè. Shop tư vấn nhiệt tình, giao hàng nhanh.</p>
+                    <div class="review-images">
+                        <img src="https://picsum.photos/id/240/100/100" alt="Review image">
+                    </div>
+                    <div class="review-likes">
+                        <button class="like-btn"><i class="far fa-thumbs-up"></i> Hữu ích (18)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 4 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="https://scontent.fvkg1-1.fna.fbcdn.net/v/t39.30808-6/449841673_122105485442388168_8662572113072891009_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=-ayfi6wGsagQ7kNvgEws-QS&_nc_oc=AdjT_wgwYc-ad1vCioyE3StMFKJ5XENzpOMHXl7RTKPC_unzfyVZIkO9sTrJuRvy5IU&_nc_zt=23&_nc_ht=scontent.fvkg1-1.fna&_nc_gid=u8ZVj2vA2u5KgIn-DUd3fg&oh=00_AYEXb2n2YbnaGG0PePGIfuE7UDJCOW945SffiqT0Zk0VQQ&oe=67DF4C96" alt="Phạm Đức Anh">
+                    </div>
+                    <div class="reviewer-details">
+                        <div class="reviewer-name">Phạm Đức Anh</div>
+                        <div class="review-date">05/03/2025</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="review-variant">Mẫu D - Size XL</div>
+                    <p class="review-text">Sản phẩm tạm ổn, nhưng màu sắc không đúng như trong hình. Chất lượng vải khá, nhưng đường may có một vài chỗ chưa được tỉ mỉ. Giao hàng nhanh.</p>
+                    <div class="review-likes">
+                        <button class="like-btn"><i class="far fa-thumbs-up"></i> Hữu ích (5)</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 5 -->
+            <div class="review-item">
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                        <img src="https://scontent.fvkg1-1.fna.fbcdn.net/v/t39.30808-6/473992033_1546384206749826_366190416230613827_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=N8wcKqF-138Q7kNvgHUFqPx&_nc_oc=AdgciuYz3K-jdPU3vgLxVJATywjZc9UK7QzwPT--2ufoJgDg34QrkfjLZg3gMq7O8NI&_nc_zt=23&_nc_ht=scontent.fvkg1-1.fna&_nc_gid=wbSmxBEIw_6N9ZJuVNCsAg&oh=00_AYGwicOG1a-b2tXM82Lmc5DLl6aUV-bsdnJ7ldxb1Cir9w&oe=67DF31D7" alt="Vũ Thị Lan">
+                    </div>
+                    <div class="reviewer-details">
+                        <div class="reviewer-name">Vũ Thị Lan</div>
+                        <div class="review-date">01/03/2025</div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-variant">Mẫu E - Size S</div>
+                    <p class="review-text">Tuyệt vời! Sản phẩm đẹp hơn cả mong đợi. Chất vải mềm, mặc rất thoải mái. Đặc biệt là mẫu E rất độc đáo và nổi bật. Sẽ ủng hộ shop dài dài!</p>
+                    <div class="review-images">
+                        <img src="https://picsum.photos/id/244/100/100" alt="Review image">
+                        <img src="https://picsum.photos/id/243/100/100" alt="Review image">
+                        <img src="https://picsum.photos/id/242/100/100" alt="Review image">
+                    </div>
+                    <div class="review-likes">
+                        <button class="like-btn"><i class="far fa-thumbs-up"></i> Hữu ích (32)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reviews-pagination">
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <button class="pagination-btn">...</button>
+            <button class="pagination-btn">10</button>
+            <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- New Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Về Chúng Tôi</h3>
+                <p>TeeZy Store là thương hiệu thời trang uy tín với kinh nghiệm, cung cấp các sản phẩm chất lượng cao với giá cả hợp lý.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Hỗ Trợ Khách Hàng</h3>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Phương thức thanh toán</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Văn Linh, Phường Tân Thuận Tây, Quận 7, TP. HCM</li>
+                    <li><i class="fas fa-phone"></i> 0345850448 </li>
+                    <li><i class="fas fa-envelope"></i> teezystorevn@gmail.com </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Đăng Ký Nhận Tin</h3>
+                <p>Nhận thông tin về sản phẩm mới và khuyến mãi</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Email của bạn">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="payment-methods">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TShop. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
